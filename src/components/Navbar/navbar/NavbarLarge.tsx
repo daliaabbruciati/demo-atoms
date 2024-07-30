@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import Icon from '@/components/ui/Icon'
 
 const NavbarLarge = () => {
   return (
@@ -14,12 +14,7 @@ const NavbarLarge = () => {
         </Link>
       </div>
       <div className="flex items-center gap-2">
-        <Image
-          alt="account"
-          height="16"
-          src="/assets/Iconaccount.png"
-          width="16"
-        />
+        <Icon alt="account" src="Iconaccount.png" />
         <Link className="text-sm" href="#">
           Accedi
         </Link>
