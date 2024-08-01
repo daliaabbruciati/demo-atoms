@@ -10,15 +10,26 @@ interface TagProps extends VariantProps<typeof buildClass> {
   text?: string
 }
 
-export const tagColorMapping = new Map([
-  ['Tutti i temi', 'bg-gray-200'],
-  ['Ambiente', 'bg-green-100'],
-  ['Economia', 'bg-blue-100'],
-  ['Mondo', 'bg-orange-100'],
-  ['Non Profit', 'bg-purple-100'],
-  ['Politica', 'bg-yellow-100'],
-  ['Società', 'bg-sky-100'],
-  ['Welfare', 'bg-pink-100'],
+enum ColorName {
+  'blue' = 'bg-blue-100',
+  'gray' = 'bg-gray-200',
+  'green' = 'bg-green-100',
+  'orange' = 'bg-orange-100',
+  'pink' = 'bg-pink-100',
+  'purple' = 'bg-purple-100',
+  'sky' = 'bg-sky-100',
+  'yellow' = 'bg-yellow-100',
+}
+
+const tagColorMapping = new Map([
+  ['Tutti i temi', ColorName.gray],
+  ['Ambiente', ColorName.green],
+  ['Economia', ColorName.blue],
+  ['Mondo', ColorName.orange],
+  ['Non Profit', ColorName.purple],
+  ['Politica', ColorName.yellow],
+  ['Società', ColorName.sky],
+  ['Welfare', ColorName.pink],
 ])
 
 const buildClass = cva(
