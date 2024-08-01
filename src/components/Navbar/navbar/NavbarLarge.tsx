@@ -1,24 +1,25 @@
-import Link from 'next/link'
-import React from 'react'
-import Icon from '@/components/ui/Icon'
+'use client'
+import Label from '@/components/ui/Label'
+import React, { useState } from 'react'
+import { categories } from '@/mocks/data/categories'
 
 const NavbarLarge = () => {
+  const [isSelected, setIsSelected] = useState('Tutti i temi')
+
+  const handleSelected = (category: string) => {
+    setIsSelected(category)
+  }
+
   return (
-    <div className="flex w-full items-center justify-between border border-solid border-b-black px-10 py-4">
-      <div className="flex gap-6">
-        <Link className="text-sm" href="#">
-          Contribuisci
-        </Link>
-        <Link className="text-sm" href="#">
-          Abbonati
-        </Link>
-      </div>
-      <div className="flex items-center gap-2">
-        <Icon alt="account" src="Iconaccount.png" />
-        <Link className="text-sm" href="#">
-          Accedi
-        </Link>
-      </div>
+    <div className="flex h-24 w-full gap-2.5 border border-t-0 border-solid border-b-black px-10 py-6">
+      {categories.map((category) => (
+        <Label
+          isActive={isSelected === category}
+          key={category}
+          onClick={() => handleSelected(category)}
+          text={category}
+        />
+      ))}
     </div>
   )
 }
