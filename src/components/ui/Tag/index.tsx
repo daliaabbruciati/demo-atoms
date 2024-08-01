@@ -2,8 +2,8 @@ import React from 'react'
 import { cva, VariantProps } from 'class-variance-authority'
 
 interface TagProps extends VariantProps<typeof buildClass> {
-  category: string
-  isSelected: boolean
+  category?: string
+  isSelected?: boolean
 
   onClick?(): void
 
@@ -51,8 +51,8 @@ const Tag = ({ category, isSelected, onClick, text, variant }: TagProps) => {
     <button
       className={
         isSelected
-          ? buildClass({ variant }) + ` ${tagColorMapping.get(category)}`
-          : buildClass({ variant }) + ' hover:text-gray-400'
+          ? buildClass({ variant }) + ` ${tagColorMapping.get(category ?? '')}`
+          : buildClass({ variant }) + ' bg-white hover:text-gray-400'
       }
       onClick={onClick}
     >
