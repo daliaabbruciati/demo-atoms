@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import React from 'react'
-import Icon from '@/components/ui/Icon'
+import Icon, { IconName } from '@/components/ui/Icon'
+import Link from 'next/link'
 
 const HeaderLarge = () => {
   return (
@@ -14,7 +14,7 @@ const HeaderLarge = () => {
         </Link>
       </div>
       <div className="flex items-center gap-2">
-        <Icon alt="account" src="Iconaccount.png" />
+        <Icon alt="account" className="h-5 w-5" name={IconName.Account} />
         <Link className="text-sm" href="#">
           Accedi
         </Link>
